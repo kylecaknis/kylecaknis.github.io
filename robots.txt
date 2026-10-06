@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kylecaknis.github.io/sitemap.xml

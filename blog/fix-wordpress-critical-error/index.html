@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to fix &quot;There has been a critical error&quot; in WordPress | Kyle Caknis Web Design</title>
+<meta name="description" content="Your WordPress site shows &quot;There has been a critical error on this website&quot;? Here&#x27;s what it means and how to fix it step by step, in plain English.">
+<link rel="canonical" href="https://kylecaknis.github.io/blog/fix-wordpress-critical-error/">
+<meta property="og:type" content="article"><meta property="og:title" content="How to fix &quot;There has been a critical error&quot; in WordPress">
+<meta property="og:description" content="Your WordPress site shows &quot;There has been a critical error on this website&quot;? Here&#x27;s what it means and how to fix it step by step, in plain English."><meta property="og:url" content="https://kylecaknis.github.io/blog/fix-wordpress-critical-error/">
+<meta property="og:image" content="https://kylecaknis.github.io/assets/img/pf-home.webp"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/kc-logo.webp">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to fix \"There has been a critical error\" in WordPress", "description": "Your WordPress site shows \"There has been a critical error on this website\"? Here's what it means and how to fix it step by step, in plain English.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Kyle Caknis", "url": "https://kylecaknis.github.io/"}, "mainEntityOfPage": "https://kylecaknis.github.io/blog/fix-wordpress-critical-error/"}</script>
+</head><body>
+<header><div class="wrap">
+<a class="logo" href="/"><img src="/assets/img/kc-logo.webp" alt="" width="36" height="36"><span>Kyle Caknis Web Design</span></a>
+<nav><a href="/#services" class="hide-sm">Services</a><a href="/portfolio/">Work</a><a href="/blog/">Blog</a>
+<a href="https://www.fiverr.com/kylecaknis" rel="noopener">Hire me</a></nav>
+</div></header>
+<main>
+<article>
+<p class="meta"><a href="/blog/">Blog</a> · 2026-10-06 · by Kyle Caknis</p>
+<h1>How to fix &quot;There has been a critical error&quot; in WordPress</h1>
+<p>You open your website and instead of your homepage you see one line: <strong>"There has been a critical error on this website."</strong> No menu, no content, nothing. It's scary, but it's one of the most common WordPress problems, and it's almost always fixable without losing anything.</p>
+<p>Here's what's going on, and how to fix it yourself, step by step.</p>
+<h2 id="what-the-error-actually-means">What the error actually means</h2>
+<p>WordPress runs on a programming language called PHP. When a piece of PHP code crashes badly enough that the page can't finish loading, WordPress stops and shows this message instead of a half-broken page.</p>
+<p>In practice, nine times out of ten the crash comes from one of these:</p>
+<ul><li><strong>A plugin update</strong> that clashes with another plugin or your theme</li><li><strong>A theme update</strong>, or a change to your theme's files</li><li><strong>Your host upgrading PHP</strong> to a newer version your old plugins don't support</li><li><strong>Running out of memory</strong> on cheap hosting</li></ul>
+<p>The good news: your content (pages, posts, products, orders) is stored separately in the database. The error stops it being shown, but it doesn't delete it.</p>
+<h2 id="step-1-check-your-email-for-the-recovery-link">Step 1: Check your email for the recovery link</h2>
+<p>Since version 5.2, WordPress emails the site's admin address when this happens. Look for an email with a subject like <strong>"Your Site is Experiencing a Technical Issue"</strong> (check spam too).</p>
+<p>It tells you which plugin or theme caused the crash, and gives you a special <strong>recovery mode</strong> link. Click it, log in, and WordPress lets you into the dashboard with the faulty plugin paused. Then you can:</p>
+<ol><li>Go to <strong>Plugins</strong> and deactivate the plugin it named</li><li>Check your site loads again</li><li>Look for an update to that plugin, or find an alternative</li></ol>
+<p>If you got the email, that's often the whole fix.</p>
+<h2 id="step-2-no-email-turn-the-plugins-off-by-hand">Step 2: No email? Turn the plugins off by hand</h2>
+<p>If the email never arrived, you can switch off every plugin at once without logging in:</p>
+<ol><li>Log in to your <strong>hosting control panel</strong> (cPanel, Plesk or your host's own dashboard) and open the <strong>File Manager</strong></li><li>Go to <code>wp-content</code></li><li>Rename the folder <code>plugins</code> to <code>plugins-off</code></li><li>Reload your site</li></ol>
+<p>If the site comes back, a plugin was the culprit. Rename the folder back to <code>plugins</code>, then go to <strong>Plugins</strong> in your dashboard. They'll all be deactivated. Turn them on <strong>one at a time</strong>, reloading the site each time. When the error comes back, you've found the one causing it.</p>
+<h2 id="step-3-rule-out-the-theme">Step 3: Rule out the theme</h2>
+<p>If turning off plugins didn't help, try the theme. In File Manager, go to <code>wp-content/themes</code> and rename your active theme's folder (for example <code>astra</code> to <code>astra-off</code>). WordPress will fall back to a default theme such as Twenty Twenty-Four, if one is installed.</p>
+<p>If the site loads, the problem is in your theme, often a recent update or an edit to <code>functions.php</code>.</p>
+<h2 id="step-4-check-your-php-version">Step 4: Check your PHP version</h2>
+<p>Hosts regularly move sites to newer PHP versions. Older plugins and themes sometimes can't cope. In your hosting panel, look for <strong>"PHP version"</strong> or <strong>"Select PHP version"</strong>. If it changed recently, try moving back one version (for example from 8.3 to 8.2) as a short-term fix, then update the plugin that's struggling.</p>
+<h2 id="step-5-turn-on-the-debug-log">Step 5: Turn on the debug log</h2>
+<p>If you're still stuck, WordPress can write the exact error to a file. In File Manager, open <code>wp-config.php</code> and, just above the line that says <em>"That's all, stop editing!"</em>, add:</p>
+<pre><code>define( &#x27;WP_DEBUG&#x27;, true );
+define( &#x27;WP_DEBUG_LOG&#x27;, true );
+define( &#x27;WP_DEBUG_DISPLAY&#x27;, false );</code></pre>
+<p>Reload the site, then open <code>wp-content/debug.log</code>. The last lines name the file that crashed, and the folder name tells you which plugin or theme it belongs to. <strong>Remove those lines again once you're done.</strong></p>
+<h2 id="how-to-stop-it-happening-again">How to stop it happening again</h2>
+<ul><li><strong>Back up before updating.</strong> A free plugin like UpdraftPlus can do it automatically.</li><li><strong>Don't update everything at once.</strong> Update plugins one by one so you know which one broke something.</li><li><strong>Delete plugins you don't use.</strong> Fewer plugins means fewer clashes.</li><li><strong>Keep WordPress, your theme and plugins up to date</strong>, but not on the day before a big launch.</li></ul>
+<div class="box">
+<p><strong>Short version:</strong> check your email for the recovery link; if there isn't one, rename the <code>plugins</code> folder, then the theme folder, and check your PHP version. One of those fixes most critical errors.</p>
+</div>
+<p>If you'd rather not touch File Manager or <code>wp-config.php</code>, that's completely fair. I fix this error regularly. I take a full backup first, find the cause, fix it properly and explain what went wrong in plain English. You can <a href="https://www.fiverr.com/kylecaknis/fix-wordpress-errors-bugs-layout-issues-and-website-problems-fast" rel="noopener">see my WordPress fix packages on Fiverr</a>.</p>
+<div class="box"><h3>Want me to sort it for you?</h3><p>I'm Kyle, a WordPress developer near Stirling. WordPress fixes, done properly and explained in plain English.</p>
+<a class="btn" href="https://www.fiverr.com/kylecaknis/fix-wordpress-errors-bugs-layout-issues-and-website-problems-fast" rel="noopener">See packages on Fiverr</a></div>
+<h2>More guides</h2><div class='list'><a href="/blog/does-my-small-business-need-a-website/">Does a small business still need a website in 2026?<span>Facebook page or a proper website? An honest look at whether your small business needs a website, what it should include, and what it really involves.</span></a><a href="/blog/small-business-website-checklist/">Small business website checklist: 12 things to check<span>A plain-English website check-up for small business owners. 12 quick checks you can do yourself in about 20 minutes, with free tools and no jargon.</span></a><a href="/blog/why-is-my-wordpress-site-slow/">Why is my WordPress site so slow? 7 causes and fixes<span>A slow WordPress site loses visitors and Google rankings. Here are the 7 most common causes and how to fix each one, explained for non-techies.</span></a></div>
+</article>
+</main>
+<footer><div class="wrap">
+<span>© 2026 Kyle Caknis Web Design · WordPress web design near Stirling, Scotland</span>
+<span><a href="/privacy/">Privacy</a> · <a href="https://www.facebook.com/profile.php?id=61594996440682" rel="noopener">Facebook</a> · <a href="https://www.fiverr.com/kylecaknis" rel="noopener">Fiverr</a></span>
+</div></footer>
+</body></html>

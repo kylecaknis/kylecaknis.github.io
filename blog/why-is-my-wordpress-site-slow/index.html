@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why is my WordPress site so slow? 7 causes and fixes | Kyle Caknis Web Design</title>
+<meta name="description" content="A slow WordPress site loses visitors and Google rankings. Here are the 7 most common causes and how to fix each one, explained for non-techies.">
+<link rel="canonical" href="https://kylecaknis.github.io/blog/why-is-my-wordpress-site-slow/">
+<meta property="og:type" content="article"><meta property="og:title" content="Why is my WordPress site so slow? 7 causes and fixes">
+<meta property="og:description" content="A slow WordPress site loses visitors and Google rankings. Here are the 7 most common causes and how to fix each one, explained for non-techies."><meta property="og:url" content="https://kylecaknis.github.io/blog/why-is-my-wordpress-site-slow/">
+<meta property="og:image" content="https://kylecaknis.github.io/assets/img/pf-home.webp"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/kc-logo.webp">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why is my WordPress site so slow? 7 causes and fixes", "description": "A slow WordPress site loses visitors and Google rankings. Here are the 7 most common causes and how to fix each one, explained for non-techies.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Kyle Caknis", "url": "https://kylecaknis.github.io/"}, "mainEntityOfPage": "https://kylecaknis.github.io/blog/why-is-my-wordpress-site-slow/"}</script>
+</head><body>
+<header><div class="wrap">
+<a class="logo" href="/"><img src="/assets/img/kc-logo.webp" alt="" width="36" height="36"><span>Kyle Caknis Web Design</span></a>
+<nav><a href="/#services" class="hide-sm">Services</a><a href="/portfolio/">Work</a><a href="/blog/">Blog</a>
+<a href="https://www.fiverr.com/kylecaknis" rel="noopener">Hire me</a></nav>
+</div></header>
+<main>
+<article>
+<p class="meta"><a href="/blog/">Blog</a> · 2026-10-06 · by Kyle Caknis</p>
+<h1>Why is my WordPress site so slow? 7 causes and fixes</h1>
+<p>If your website takes more than three seconds to load on a phone, a lot of people simply give up and go to a competitor. Google notices too: speed is part of how it decides who ranks.</p>
+<p>The good news is that most slow WordPress sites are slow for the same handful of reasons. Here they are, roughly in order of how often I see them.</p>
+<h2 id="first-measure-it">First, measure it</h2>
+<p>Before changing anything, get a baseline:</p>
+<ol><li>Go to <a href="https://pagespeed.web.dev" rel="noopener">PageSpeed Insights</a></li><li>Paste in your website address</li><li>Look at the <strong>Mobile</strong> score (it's the one that matters most, and it's always lower than desktop)</li></ol>
+<p>Under 50 is slow. 50–89 is okay but could be better. 90+ is great. Screenshot it so you can compare after.</p>
+<h2 id="1-huge-images">1. Huge images</h2>
+<p>This is the number one cause by a mile. A photo straight off a phone can be 4–5MB. Put ten of those on a homepage and you've got a page that's heavier than some apps.</p>
+<p><strong>Fix:</strong> resize images to the size they're actually shown (rarely more than 1600px wide), and compress them. A free plugin like <em>Converter for Media</em> or <em>ShortPixel</em> (free tier) can convert your existing images to the lighter WebP format automatically.</p>
+<h2 id="2-no-caching">2. No caching</h2>
+<p>Without caching, WordPress builds every page from scratch for every visitor. With caching, it builds the page once and hands out a ready-made copy.</p>
+<p><strong>Fix:</strong> install one caching plugin, not three. If your host uses LiteSpeed servers, use <em>LiteSpeed Cache</em>; otherwise <em>WP Super Cache</em> or <em>W3 Total Cache</em> are solid free choices.</p>
+<h2 id="3-too-many-plugins">3. Too many plugins</h2>
+<p>It's not the number that matters so much as what they do. One badly built plugin can add more load time than twenty good ones. Sliders, social feeds, chat widgets and "all-in-one" page builder add-ons are common offenders.</p>
+<p><strong>Fix:</strong> go through your plugin list and delete anything you don't actively use. For the rest, ask whether each one earns its place.</p>
+<h2 id="4-a-heavy-theme-or-page-builder">4. A heavy theme or page builder</h2>
+<p>Some themes load fonts, animations and scripts for features you never use, on every page.</p>
+<p><strong>Fix:</strong> lightweight themes such as <em>Astra</em>, <em>Kadence</em> or <em>GeneratePress</em> are a big improvement. Switching theme is a bigger job, so do the other fixes first.</p>
+<h2 id="5-cheap-or-overloaded-hosting">5. Cheap or overloaded hosting</h2>
+<p>If your host is slow to respond, nothing else can fully make up for it. In PageSpeed, a poor <strong>"server response time"</strong> (also called TTFB) is the giveaway.</p>
+<p><strong>Fix:</strong> a decent UK host with LiteSpeed or good caching often costs only a few pounds more a month. A free CDN like Cloudflare also helps visitors far from your server.</p>
+<h2 id="6-render-blocking-scripts-and-fonts">6. Render-blocking scripts and fonts</h2>
+<p>Some scripts and fonts must load before the page can appear at all. PageSpeed lists them under <strong>"Eliminate render-blocking resources"</strong>.</p>
+<p><strong>Fix:</strong> most caching plugins can <em>minify</em> and <em>defer</em> CSS and JavaScript. Turn these options on one at a time and check your site after each one, because occasionally they break a slider or menu.</p>
+<h2 id="7-a-cluttered-database">7. A cluttered database</h2>
+<p>Years of post revisions, spam comments and leftovers from deleted plugins slowly bloat the database.</p>
+<p><strong>Fix:</strong> the free <em>WP-Optimize</em> plugin can clean it up safely. Take a backup first.</p>
+<div class="box">
+<p><strong>Quick wins, in order:</strong> compress your images, add one caching plugin, delete unused plugins. Those three alone often move a mobile score from the 30s or 40s to 70+.</p>
+</div>
+<h2 id="what-about-getting-100-100">What about getting 100/100?</h2>
+<p>Be wary of anyone promising a perfect score. Real sites with real features (maps, booking widgets, analytics) rarely hit 100, and chasing it can mean ripping out things your business needs. What matters is that the site <em>feels</em> fast to your visitors and passes Google's Core Web Vitals.</p>
+<h2 id="want-it-done-for-you">Want it done for you?</h2>
+<p>If you'd rather not dig through settings, I speed up WordPress sites as a fixed-price job. I back up first, do all of the above that applies to your site, test that everything still works, and send you a before &amp; after report with your real scores. <a href="https://www.fiverr.com/kylecaknis/speed-up-your-wordpress-website-and-improve-your-pagespeed-score" rel="noopener">See my WordPress speed-up packages on Fiverr</a>.</p>
+<p>Not sure what's slowing your site down? A <a href="https://www.fiverr.com/kylecaknis/audit-your-wordpress-website-and-give-you-a-clear-fix-plan" rel="noopener">website check-up</a> gives you a clear PDF report of exactly what to fix.</p>
+<div class="box"><h3>Want me to sort it for you?</h3><p>I'm Kyle, a WordPress developer near Stirling. WordPress speed-ups, done properly and explained in plain English.</p>
+<a class="btn" href="https://www.fiverr.com/kylecaknis/speed-up-your-wordpress-website-and-improve-your-pagespeed-score" rel="noopener">See packages on Fiverr</a></div>
+<h2>More guides</h2><div class='list'><a href="/blog/does-my-small-business-need-a-website/">Does a small business still need a website in 2026?<span>Facebook page or a proper website? An honest look at whether your small business needs a website, what it should include, and what it really involves.</span></a><a href="/blog/fix-wordpress-critical-error/">How to fix &quot;There has been a critical error&quot; in WordPress<span>Your WordPress site shows &quot;There has been a critical error on this website&quot;? Here&#x27;s what it means and how to fix it step by step, in plain English.</span></a><a href="/blog/small-business-website-checklist/">Small business website checklist: 12 things to check<span>A plain-English website check-up for small business owners. 12 quick checks you can do yourself in about 20 minutes, with free tools and no jargon.</span></a></div>
+</article>
+</main>
+<footer><div class="wrap">
+<span>© 2026 Kyle Caknis Web Design · WordPress web design near Stirling, Scotland</span>
+<span><a href="/privacy/">Privacy</a> · <a href="https://www.facebook.com/profile.php?id=61594996440682" rel="noopener">Facebook</a> · <a href="https://www.fiverr.com/kylecaknis" rel="noopener">Fiverr</a></span>
+</div></footer>
+</body></html>
