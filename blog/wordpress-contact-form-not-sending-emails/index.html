@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WordPress contact form not sending emails? How to fix it | Kyle Caknis Web Design</title>
+<meta name="description" content="Why WordPress contact forms stop sending emails, and how to fix it step by step: check the settings, send through SMTP and set up SPF and DKIM.">
+<link rel="canonical" href="https://kylecaknis.github.io/blog/wordpress-contact-form-not-sending-emails/">
+<meta property="og:type" content="article"><meta property="og:title" content="WordPress contact form not sending emails? How to fix it">
+<meta property="og:description" content="Why WordPress contact forms stop sending emails, and how to fix it step by step: check the settings, send through SMTP and set up SPF and DKIM."><meta property="og:url" content="https://kylecaknis.github.io/blog/wordpress-contact-form-not-sending-emails/">
+<meta property="og:image" content="https://kylecaknis.github.io/assets/img/pf-home.webp"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/kc-logo.webp">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "WordPress contact form not sending emails? How to fix it", "description": "Why WordPress contact forms stop sending emails, and how to fix it step by step: check the settings, send through SMTP and set up SPF and DKIM.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Kyle Caknis", "url": "https://kylecaknis.github.io/"}, "mainEntityOfPage": "https://kylecaknis.github.io/blog/wordpress-contact-form-not-sending-emails/"}</script>
+</head><body>
+<header><div class="wrap">
+<a class="logo" href="/"><img src="/assets/img/kc-logo.webp" alt="" width="36" height="36"><span>Kyle Caknis Web Design</span></a>
+<nav><a href="/#services" class="hide-sm">Services</a><a href="/portfolio/">Work</a><a href="/blog/">Blog</a>
+<a href="https://www.fiverr.com/kylecaknis" rel="noopener">Hire me</a></nav>
+</div></header>
+<main>
+<article>
+<p class="meta"><a href="/blog/">Blog</a> · 2026-10-06 · by Kyle Caknis</p>
+<h1>WordPress contact form not sending emails? How to fix it</h1>
+<p>A contact form that looks fine but never actually delivers anything is one of the most common WordPress problems, and one of the most expensive. Visitors fill it in, see "Thank you, your message has been sent", and then hear nothing back. They don't try again. They just go to someone else.</p>
+<p>The good news is that the cause is nearly always the same, and the fix is usually straightforward. Here's how to track it down, in plain English.</p>
+<h2 id="why-wordpress-forms-stop-sending">Why WordPress forms stop sending</h2>
+<p>By default, WordPress sends email using your web server's built-in mail function. That email isn't properly "signed" as coming from your domain, so services like Gmail and Outlook treat it with suspicion. Some of it lands in spam, some is rejected outright, and some hosts block the server's mail function altogether.</p>
+<p>Nothing on your website shows an error when this happens. The form says "sent" because, as far as WordPress knows, it handed the email over successfully. What happened after that is invisible to it.</p>
+<p>So the fix is to stop relying on the server's mail and send through a proper, authenticated email account instead.</p>
+<h2 id="1-confirm-the-problem-first">1. Confirm the problem first</h2>
+<p>Fill in your own contact form with a clear subject like "Website test" and send it. Then:</p>
+<ul><li>Check your inbox <strong>and</strong> your spam or junk folder.</li><li>Search your email for the test subject, in case a filter moved it.</li><li>Wait ten minutes. Server mail can be slow.</li></ul>
+<p>If it turns up in spam, emails are being sent but not trusted. If it never arrives at all, they're being blocked or never sent. The steps below fix both.</p>
+<h2 id="2-check-the-form-s-email-settings">2. Check the form's email settings</h2>
+<p>Before changing anything else, open your form plugin and look at where it sends notifications.</p>
+<ul><li><strong>Contact Form 7:</strong> edit the form and open the <strong>Mail</strong> tab.</li><li><strong>WPForms:</strong> edit the form and go to <strong>Settings → Notifications</strong>.</li><li><strong>Gravity Forms, Ninja Forms and others</strong> have a similar "Notifications" or "Emails" section.</li></ul>
+<p>Check two things:</p>
+<ol><li><strong>The "To" address</strong> is an inbox you actually check. It's surprisingly common for it to be an old address, a former staff member, or the default admin email from when the site was built.</li><li><strong>The "From" address</strong> uses your own domain, like <code>hello@yourbusiness.co.uk</code>. If it's set to the visitor's email address, mail providers see an email "from Gmail" that didn't come from Gmail, and reject it. Put the visitor's address in the <strong>Reply-To</strong> field instead, so you can still just press reply.</li></ol>
+<p>Fixing the "From" address alone sometimes solves the whole thing.</p>
+<h2 id="3-send-through-smtp-instead">3. Send through SMTP instead</h2>
+<p>This is the step that fixes most cases for good. An SMTP plugin makes WordPress send email through a real email account, logging in properly, just like your email app does.</p>
+<p>Popular free options include <strong>WP Mail SMTP</strong>, <strong>FluentSMTP</strong> and <strong>Post SMTP</strong>. Install one from <strong>Plugins → Add New</strong>, then connect it to one of these:</p>
+<ul><li><strong>Your business email provider</strong>, such as Google Workspace or Microsoft 365. Most SMTP plugins have a step-by-step setup for both.</li><li><strong>Your hosting company's email</strong>, if your mailbox is with them. They'll give you the SMTP server name, port and login details.</li><li><strong>A transactional email service</strong> such as Brevo, Mailgun or SendGrid. These are built for sending website email and most have a free tier that's plenty for a small business form.</li></ul>
+<p>Once it's connected, use the plugin's <strong>test email</strong> feature and check the message arrives in your inbox, not spam.</p>
+<h2 id="4-set-up-spf-dkim-and-dmarc">4. Set up SPF, DKIM and DMARC</h2>
+<p>These are three small records you add to your domain's DNS settings (wherever you bought your domain, or your host if they manage it). They tell email providers which services are allowed to send email for your domain:</p>
+<ul><li><strong>SPF</strong> lists the servers allowed to send your mail.</li><li><strong>DKIM</strong> adds a digital signature to each email.</li><li><strong>DMARC</strong> tells providers what to do with mail that fails those checks.</li></ul>
+<p>Your email provider or transactional service will give you the exact records to copy in. Gmail and Outlook have become much stricter about these, so even if your form works today, setting them up stops it from quietly breaking later.</p>
+<h2 id="5-keep-a-copy-of-every-message">5. Keep a copy of every message</h2>
+<p>Even with everything set up, it's worth having a safety net. Some form plugins can save every submission inside WordPress. For Contact Form 7, the free <strong>Flamingo</strong> plugin (from the same author) does this. Most SMTP plugins also keep an email log, so you can see what was sent and whether it failed.</p>
+<p>That way, if email ever stops again, no enquiry is lost. You can still read it in the dashboard.</p>
+<h2 id="6-rule-out-spam-protection">6. Rule out spam protection</h2>
+<p>If the form shows an error or nothing happens when you press send, the problem may be before the email stage. reCAPTCHA keys that no longer match your domain, or an over-eager anti-spam or caching plugin, can block submissions. Try the form in a private browser window, and check any reCAPTCHA settings in your form plugin.</p>
+<div class="box">
+<p><strong>Short version:</strong> send yourself a test, set the "From" address to your own domain, install an SMTP plugin connected to a real email account, add SPF and DKIM records, and keep a copy of submissions in WordPress.</p>
+</div>
+<h2 id="when-to-get-help">When to get help</h2>
+<p>If you've worked through this and messages still aren't arriving, or DNS records sound like more than you want to deal with, it's a quick job for someone who does it regularly. I fix WordPress problems like this one, and I always back up the site before touching anything. You can <a href="https://www.fiverr.com/kylecaknis/fix-wordpress-errors-bugs-layout-issues-and-website-problems-fast" rel="noopener">see my WordPress fix service on Fiverr</a>.</p>
+<p>And while you're testing your form, it's a good moment to run through the rest of my <a href="/blog/small-business-website-checklist/">small business website checklist</a>. A broken form is rarely the only thing that's slipped.</p>
+<div class="box"><h3>Want me to sort it for you?</h3><p>I'm Kyle, a WordPress developer near Stirling. WordPress fixes, done properly and explained in plain English.</p>
+<a class="btn" href="https://www.fiverr.com/kylecaknis/fix-wordpress-errors-bugs-layout-issues-and-website-problems-fast" rel="noopener">See packages on Fiverr</a></div>
+<h2>More guides</h2><div class='list'><a href="/blog/does-my-small-business-need-a-website/">Does a small business still need a website in 2026?<span>Facebook page or a proper website? An honest look at whether your small business needs a website, what it should include, and what it really involves.</span></a><a href="/blog/fix-wordpress-critical-error/">How to fix &quot;There has been a critical error&quot; in WordPress<span>Your WordPress site shows &quot;There has been a critical error on this website&quot;? Here&#x27;s what it means and how to fix it step by step, in plain English.</span></a><a href="/blog/small-business-website-checklist/">Small business website checklist: 12 things to check<span>A plain-English website check-up for small business owners. 12 quick checks you can do yourself in about 20 minutes, with free tools and no jargon.</span></a></div>
+</article>
+</main>
+<footer><div class="wrap">
+<span>© 2026 Kyle Caknis Web Design · WordPress web design near Stirling, Scotland</span>
+<span><a href="/privacy/">Privacy</a> · <a href="https://www.facebook.com/profile.php?id=61594996440682" rel="noopener">Facebook</a> · <a href="https://www.fiverr.com/kylecaknis" rel="noopener">Fiverr</a></span>
+</div></footer>
+</body></html>
