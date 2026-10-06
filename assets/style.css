@@ -53,6 +53,7 @@ article .meta{color:var(--mute);font-size:15px}
 .list a span{display:block;color:var(--mute);font-size:15px}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.prose p{margin:0 0 18px;font-size:18px}
 .strip{border-top:1px solid var(--line);background:var(--panel);padding:22px 0}
 .strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .strip span{color:var(--mute)}.strip strong{color:var(--ink)}
