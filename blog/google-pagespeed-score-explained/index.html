@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google PageSpeed score explained in plain English | Kyle Caknis Web Design</title>
+<meta name="description" content="What your Google PageSpeed Insights score means, why mobile is lower than desktop, what the Core Web Vitals are, and which numbers really matter.">
+<link rel="canonical" href="https://kylecaknis.github.io/blog/google-pagespeed-score-explained/">
+<meta property="og:type" content="article"><meta property="og:title" content="Google PageSpeed score explained in plain English">
+<meta property="og:description" content="What your Google PageSpeed Insights score means, why mobile is lower than desktop, what the Core Web Vitals are, and which numbers really matter."><meta property="og:url" content="https://kylecaknis.github.io/blog/google-pagespeed-score-explained/">
+<meta property="og:image" content="https://kylecaknis.github.io/assets/og/google-pagespeed-score-explained.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/kc-logo.webp">
+<link rel="stylesheet" href="/assets/style.css">
+<meta name="p:domain_verify" content="e719c8f182d4de11e60a79da96926113">
+<meta name="google-site-verification" content="dODrZQl51r_fbzc8kSKSuvTehSMu7sku_woI4W-upqQ">
+<link rel="alternate" type="application/rss+xml" title="Kyle Caknis Web Design blog" href="/feed.xml">
+<meta property="article:published_time" content="2026-10-11">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Google PageSpeed score explained in plain English", "description": "What your Google PageSpeed Insights score means, why mobile is lower than desktop, what the Core Web Vitals are, and which numbers really matter.", "datePublished": "2026-10-11", "dateModified": "2026-10-11", "author": {"@type": "Person", "name": "Kyle Caknis", "url": "https://kylecaknis.github.io/"}, "mainEntityOfPage": "https://kylecaknis.github.io/blog/google-pagespeed-score-explained/", "image": "https://kylecaknis.github.io/assets/og/google-pagespeed-score-explained.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kylecaknis.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kylecaknis.github.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "Google PageSpeed score explained in plain English", "item": "https://kylecaknis.github.io/blog/google-pagespeed-score-explained/"}]}</script>
+</head><body>
+<header><div class="wrap">
+<a class="logo" href="/" aria-label="Kyle Caknis Web Design home"><img src="/assets/img/kc-logo.webp" alt="" width="36" height="36"><span>Kyle Caknis Web Design</span></a>
+<nav><a href="/#services" class="hide-sm">Services</a><a href="/portfolio/">Work</a><a href="/blog/">Blog</a>
+<a href="https://www.fiverr.com/kylecaknis" rel="noopener">Hire me</a></nav>
+</div></header>
+<main>
+<article>
+<p class="meta"><a href="/blog/">Blog</a> · 2026-10-11 · by Kyle Caknis</p>
+<h1>Google PageSpeed score explained in plain English</h1>
+<p>You paste your website into Google's PageSpeed Insights, wait a few seconds, and get a big coloured number. Maybe it's a red 34. Maybe an orange 61. Then comes a long list of warnings with names like "Largest Contentful Paint" and "Reduce unused JavaScript".</p>
+<p>What does it all actually mean, and how worried should you be? Here's the plain-English version.</p>
+<h2 id="where-to-test">Where to test</h2>
+<p>Go to <a href="https://pagespeed.web.dev" rel="noopener">PageSpeed Insights</a>, paste in your website address and press <strong>Analyze</strong>. You'll get two tabs: <strong>Mobile</strong> and <strong>Desktop</strong>. Start with Mobile. Most small business visitors are on a phone, and Google mainly looks at the mobile version of your site when deciding how to rank it.</p>
+<h2 id="the-two-halves-of-the-report">The two halves of the report</h2>
+<p>This is the part most people miss. The page shows two different kinds of results.</p>
+<p><strong>1. "Discover what your real users are experiencing"</strong>: this is <em>field data</em>. It comes from real visits to your site by people using Chrome, collected over the last 28 days. If your site doesn't get much traffic, this section may say there isn't enough data. That's normal for a small business site.</p>
+<p><strong>2. "Diagnose performance issues"</strong>: this is <em>lab data</em>. Google loads your page once, right now, on a simulated mid-range phone with a slowish mobile connection. The big score out of 100 comes from this test.</p>
+<p>So the big number is a single test in artificial conditions. It's a very useful guide, but it isn't the same as what your customers actually experience.</p>
+<div class="incta"><p><strong>Short on time?</strong> I can sort this for you, properly and in plain English.</p><a class="btn" href="https://www.fiverr.com/kylecaknis/speed-up-your-wordpress-website-and-improve-your-pagespeed-score" rel="noopener">See packages on Fiverr</a></div>
+<h2 id="what-the-score-colours-mean">What the score colours mean</h2>
+<ul><li><strong>0–49 (red):</strong> slow. Visitors are likely giving up before the page loads.</li><li><strong>50–89 (orange):</strong> okay, with room to improve.</li><li><strong>90–100 (green):</strong> fast.</li></ul>
+<p>Don't be surprised if you run the test twice and get two different scores. A swing of 5 or 10 points between runs is normal, because the lab test is sensitive to tiny differences in network and server timing. Run it three times and look at the middle result.</p>
+<h2 id="why-mobile-is-lower-than-desktop">Why mobile is lower than desktop</h2>
+<p>Mobile scores are nearly always lower, sometimes by 30 points or more. That doesn't mean your site is broken on phones. The mobile test deliberately slows down the processor and connection to mimic an average phone on 4G, so every heavy image and script hurts more. Treat the mobile score as your real target.</p>
+<h2 id="the-core-web-vitals-decoded">The Core Web Vitals, decoded</h2>
+<p>Google's <strong>Core Web Vitals</strong> are the three measurements it cares most about. They appear in the field data section, and as "Passed" or "Failed" at the top.</p>
+<p><strong>Largest Contentful Paint (LCP): how fast does the main thing appear?</strong> This is the time until the biggest item on screen, usually your hero image or main heading, has loaded. Good is <strong>2.5 seconds or less</strong>. A huge, uncompressed header photo is the most common reason this fails.</p>
+<p><strong>Interaction to Next Paint (INP): does it respond when I tap?</strong> This measures the delay between someone tapping a button or menu and the page visibly reacting. Good is <strong>200 milliseconds or less</strong>. Heavy scripts, chat widgets and bloated page builders are the usual suspects.</p>
+<p><strong>Cumulative Layout Shift (CLS): does the page jump around?</strong> You've seen this: you go to tap a link and the page jumps because an image or banner loaded late, so you tap the wrong thing. Good is <strong>0.1 or less</strong>. Images without set sizes, late-loading cookie banners and web fonts swapping in are common causes.</p>
+<h2 id="the-other-numbers-in-the-lab-test">The other numbers in the lab test</h2>
+<p>The lab section also shows <strong>First Contentful Paint</strong> (when <em>anything</em> first appears), <strong>Speed Index</strong> (how quickly the page visibly fills in) and <strong>Total Blocking Time</strong> (how long the page is too busy to respond). The big score is a weighted mix of these plus LCP and CLS. Total Blocking Time, LCP and CLS carry the most weight, so improving those moves the score fastest.</p>
+<h2 id="how-to-read-the-long-list-of-warnings">How to read the long list of warnings</h2>
+<p>Under the scores you'll see <strong>Opportunities</strong> and <strong>Diagnostics</strong>. Don't try to fix everything. Look at the first few opportunities, because they're sorted by how much time they could save. On a typical WordPress site you'll see the same few again and again:</p>
+<ol><li><strong>Properly size images</strong> / <strong>Serve images in next-gen formats</strong>: your photos are too big. Resize them and convert them to WebP.</li><li><strong>Eliminate render-blocking resources</strong>: scripts and fonts are holding up the page. A good caching plugin can defer them.</li><li><strong>Reduce unused JavaScript / CSS</strong>: your theme or plugins load code on pages that don't need it.</li><li><strong>Reduce initial server response time</strong>: your hosting is slow to respond, or there's no caching.</li></ol>
+<p>I go through the causes and fixes for each of these in <a href="/blog/why-is-my-wordpress-site-slow/">Why is my WordPress site so slow?</a>.</p>
+<div class="box">
+<p><strong>What's a realistic target?</strong> For a typical small business WordPress site, aim for <strong>70+ on mobile</strong> and <strong>passing Core Web Vitals</strong>. That's a site that feels quick to real visitors. Going from 75 to 95 is often a lot of work for very little real-world difference.</p>
+</div>
+<h2 id="should-you-chase-100">Should you chase 100?</h2>
+<p>Usually not. A perfect score is nice, but real business sites have maps, booking widgets, reviews and analytics, and each one costs a few points. Removing useful features just to hit a number can lose you more customers than it wins. Be wary of anyone who promises a perfect score whatever your site has on it.</p>
+<p>What matters is this: does the page appear quickly, respond when tapped, and stay still while it loads? If the answer is yes, you're in good shape.</p>
+<h2 id="want-a-hand-with-it">Want a hand with it?</h2>
+<p>If your mobile score is in the red and you'd rather not dig through settings yourself, I speed up WordPress sites as a fixed-price job. I take a backup first, fix what's slowing your site down, check everything still works, and send you a before &amp; after report with your real PageSpeed scores. <a href="https://www.fiverr.com/kylecaknis/speed-up-your-wordpress-website-and-improve-your-pagespeed-score" rel="noopener">See my WordPress speed-up packages on Fiverr</a>.</p>
+<p>Not sure whether speed is your biggest problem? The <a href="/blog/small-business-website-checklist/">small business website checklist</a> is a good free place to start.</p>
+<div class="box"><h3>Want me to sort it for you?</h3><p>I'm Kyle, a WordPress developer near Stirling. WordPress speed-ups, done properly and explained in plain English.</p>
+<a class="btn" href="https://www.fiverr.com/kylecaknis/speed-up-your-wordpress-website-and-improve-your-pagespeed-score" rel="noopener">See packages on Fiverr</a></div>
+<h2>More guides</h2><div class='list'><a href="/blog/does-my-small-business-need-a-website/">Does a small business still need a website in 2026?<span>Facebook page or a proper website? An honest look at whether your small business needs a website, what it should include, and what it really involves.</span></a><a href="/blog/fix-wordpress-critical-error/">How to fix &quot;There has been a critical error&quot; in WordPress<span>Your WordPress site shows &quot;There has been a critical error on this website&quot;? Here&#x27;s what it means and how to fix it step by step, in plain English.</span></a><a href="/blog/small-business-website-checklist/">Small business website checklist: 12 things to check<span>A plain-English website check-up for small business owners. 12 quick checks you can do yourself in about 20 minutes, with free tools and no jargon.</span></a></div>
+</article>
+</main>
+<aside class="strip"><div class="wrap"><span>Not sure what your website needs? <strong>Start with a check-up</strong>: a clear PDF report of exactly what to fix.</span><a class="btn" href="https://www.fiverr.com/kylecaknis/audit-your-wordpress-website-and-give-you-a-clear-fix-plan" rel="noopener">Get a website check-up</a></div></aside>
+<div class="stickycta"><span>WordPress speed-ups, done properly</span><a class="btn" href="https://www.fiverr.com/kylecaknis/speed-up-your-wordpress-website-and-improve-your-pagespeed-score" rel="noopener">See packages</a></div>
+<footer><div class="wrap">
+<span>© 2026 Kyle Caknis Web Design · WordPress web design near Stirling, Scotland<br>Areas: <a href="/web-designer-stirling/">Stirling</a> · <a href="/web-designer-falkirk/">Falkirk</a> · <a href="/web-designer-glasgow/">Glasgow</a> · <a href="/wordpress-help-stirling/">WordPress help</a></span>
+<span><a href="/privacy/">Privacy</a> · <a href="https://www.facebook.com/profile.php?id=61594996440682" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/kylecaknis_webdesign/" rel="noopener">Instagram</a> · <a href="https://www.pinterest.com/kylecaknis_webdesign/" rel="noopener">Pinterest</a> · <a href="https://www.fiverr.com/kylecaknis" rel="noopener">Fiverr</a></span>
+</div></footer>
+</body></html>
